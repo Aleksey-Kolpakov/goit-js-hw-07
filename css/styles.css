@@ -1,0 +1,23 @@
+.galery-item:not(:last-child) {
+    margin-right: 15px;
+}
+.galery-item{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+.gallery-js{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+}
+#validation-input {
+    border: 3px solid #bdbdbd;
+    margin-bottom: 30px;
+  }
+  #validation-input.valid-js{
+    border-color: #4caf50;
+}
+#validation-input.invalid-js{
+    border-color:red;
+}
