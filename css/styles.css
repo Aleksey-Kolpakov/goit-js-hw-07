@@ -17,7 +17,16 @@
   }
   #validation-input.valid-js{
     border-color: #4caf50;
+    
 }
 #validation-input.invalid-js{
     border-color:red;
+   
+}
+#text{
+    font-size: 18px;
+}
+.box-item{
+    margin: 5px;
+     
 }
