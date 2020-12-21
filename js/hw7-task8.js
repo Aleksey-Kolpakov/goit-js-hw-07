@@ -3,18 +3,19 @@ function randColor() {
     let r = Math.floor(Math.random() * (256));
     let g = Math.floor(Math.random() * (256));
     let b = Math.floor(Math.random() * (256));
-    const color = '#' + r.toString(16) + g.toString(16) + b.toString(16);
+    const color = `rgb(${r},${g},${b})`;
     // element.style.background = color;        
     return color;
 }
 console.log(randColor());
-const divBoxesElement = document.querySelector('#boxes');
+let divBoxesElement = document.querySelector('#boxes');
 console.log(divBoxesElement);
 
 
 const renderButton = document.querySelector('button[data-action="render"]');
 const destroyButton = document.querySelector('button[data-action="destroy"]');
 const elementsInput = document.querySelector('#controls > input');
+const controlsDiv = document.querySelector('#controls');
 console.log(elementsInput.value);
 const createBoxes = function () {
     let width = 30;
@@ -31,15 +32,16 @@ const createBoxes = function () {
 };
 renderButton.addEventListener('click', createBoxes);
 destroyButton.addEventListener('click', () => {
-    divBoxesElement.insertAdjacentHTML('afterbegin', '');
-    const boxElements = divBoxesElement.children;
-    console.log(boxElements);
+    const newDivBoxes = divBoxesElement.cloneNode(false);
+    divBoxesElement.before(newDivBoxes);
+    divBoxesElement.remove()
+    divBoxesElement = newDivBoxes;
 
-    console.log(boxElements.length);
-    const length = boxElements.length;
-    for (let i = length - 1; i >= 0; i -= 1) {
-        console.log(boxElements[i]);
+    // const boxElements = divBoxesElement.children;
+    // const length = boxElements.length;
+    // for (let i = length - 1; i >= 0; i -= 1) {
 
-        divBoxesElement.removeChild(boxElements[i])
-    }
+
+    //     divBoxesElement.removeChild(boxElements[i])
+    // }
 });
