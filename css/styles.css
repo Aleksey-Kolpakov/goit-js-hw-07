@@ -9,7 +9,7 @@
 .gallery-js{
     display: flex;
     list-style: none;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 #validation-input {
     border: 3px solid #bdbdbd;
@@ -18,6 +18,9 @@
   #validation-input.valid-js{
     border-color: #4caf50;
     
+}
+#counter{
+    margin: 15px;
 }
 #validation-input.invalid-js{
     border-color:red;
