@@ -1,8 +1,9 @@
 //input type="text" id="validation-input" data-length="6" placeholder="Введи 6 символов" />
 const validationInput = document.querySelector('#validation-input');
-// console.log(validationInput);
+console.log(validationInput.dataLength);
+
+
 const dataLength = Number(validationInput.getAttribute('data-length'));
-console.log(dataLength);
 const checkInput = function () {
     if (validationInput.value.length === dataLength) {
 
